@@ -1,0 +1,10 @@
+version: '3.7'
+
+services:
+  api:
+    container_name: api_container
+    build: ./api
+    ports:
+      - 8080:8080
+    command: npm run start
+
