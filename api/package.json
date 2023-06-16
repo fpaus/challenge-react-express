@@ -1,0 +1,32 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.mjs",
+  "type": "module",
+  "scripts": {
+    "start": "node src/app.mjs",
+    "test": "mocha --reporter spec",
+    "standard": "standard --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "standard": "^17.1.0"
+  },
+  "standard": {
+    "globals": [
+      "beforeEach",
+      "expect",
+      "it",
+      "context"
+    ]
+  }
+}
