@@ -1,4 +1,4 @@
-FROM node:18-alpine3.18 as install_dependencies
+FROM node:16-alpine as install_dependencies
 
 WORKDIR /app
 
@@ -8,7 +8,7 @@ RUN npm ci --omit=dev
 
 
 
-FROM node:18-alpine3.18 as build
+FROM node:16-alpine as build
 
 WORKDIR /app
 
@@ -19,7 +19,7 @@ COPY . .
 # RUN npm run build
 
 
-FROM node:18-alpine3.18 as run
+FROM node:16-alpine as run
 
 WORKDIR /app
 

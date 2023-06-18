@@ -17,20 +17,18 @@ export default class FilesController {
    */
   async getAllFilesData(req, res) {
     const { filename } = req.query;
-    if (!filename) {
-      const parsedFiles = await this._getParsedFiles();
-      res.json({
-        parsedFiles,
-      });
-    } else {
-      try {
+    try {
+      if (!filename) {
+        const parsedFiles = await this._getParsedFiles();
+        res.json(parsedFiles);
+      } else {
         const parsedFile = await this._getOneParsedFile(filename);
         res.json([parsedFile]);
-      } catch (err) {
-        res.status(500).json({
-          error: 'Could not retrieve file',
-        });
       }
+    } catch (err) {
+      res.status(500).json({
+        error: 'Could not retrieve file',
+      });
     }
   }
 
