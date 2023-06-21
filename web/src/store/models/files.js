@@ -1,4 +1,4 @@
-import fetcher from '../../utils/fetcher';
+import fetcher from '../../utils/fetcher'
 export const files = {
   state: {
     files: [],
@@ -13,29 +13,29 @@ export const files = {
         error: null
       }
     },
-    setLoading(state) {
+    setLoading (state) {
       return {
         loading: true,
         files: [],
         error: null
       }
     },
-    setError(state, payload) {
+    setError (state, payload) {
       return {
         loading: false,
         files: [],
         error: payload
       }
-     }
+    }
   },
   effects: (dispatch) => ({
     async getFiles (payload, rootState) {
-      dispatch.files.setLoading();
+      dispatch.files.setLoading()
       try {
         const files = await fetcher.getFiles(payload)
         dispatch.files.setFiles(files)
       } catch (error) {
-        dispatch.files.setError(error.response.data);
+        dispatch.files.setError(error.response.data)
       }
     }
   })

@@ -1,6 +1,6 @@
-import cors from 'cors';
-import express from 'express';
-import routes from './routes/index.mjs';
+import cors from 'cors'
+import express from 'express'
+import routes from './routes/index.mjs'
 
 const PORT = 8080
 
